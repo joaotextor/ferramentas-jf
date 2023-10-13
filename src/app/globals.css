@@ -3,25 +3,47 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --foreground-rgb: #fffad7;
+  --background-start-rgb: #091527;
+  --background-end-rgb: #0f2038;
+  --default-font: "Nunito", sans-serif;
 }
 
 body {
+  scroll-behavior: smooth;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, var(--background-end-rgb))
+    var(--background-start-rgb);
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  font-family: var(--default-font);
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+span,
+p {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: var(--foreground-rgb);
+}
+
+h1 {
+  font-size: 32px;
+}
+h2 {
+  font-size: 28px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 20px;
 }
