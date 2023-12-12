@@ -66,7 +66,7 @@ export default function Home() {
         <meta property="og:description" content="Faça mais em menos tempo!" />
       </Head>
       <BGParticles />
-      <main className="flex min-h-screen flex-col items-center px-96 pt-12 text-justify">
+      <main className="flex min-h-screen flex-col items-center 2xl:px-72 pt-12 text-justify">
         <div className="flex flex-col items-center justify-center gap-4">
           <Image src={heroImage} alt="Hero" width={250} className="justify-" />
           <h1
@@ -76,7 +76,7 @@ export default function Home() {
           >
             Bem vindo, colegas da Justiça Federal!
           </h1>
-          <h4 className="text-center pb-8">
+          <h4 className="text-center pb-8 px-8">
             Aqui disponibilizo algumas ferramentas para agilizar algumas tarefas
             no dia-a-dia do nosso trabalho!
             <div className="flex flex-wrap gap-4 justify-center">
