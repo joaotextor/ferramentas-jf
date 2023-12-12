@@ -62,6 +62,8 @@ export default function Home() {
     <>
       <Head>
         <meta name="og:image" content={heroImage} />
+        <meta property="og:title" content="Ferramentas JF" />
+        <meta property="og:description" content="Faça mais em menos tempo!" />
       </Head>
       <BGParticles />
       <main className="flex min-h-screen flex-col items-center px-96 pt-12 text-justify">
