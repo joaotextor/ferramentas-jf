@@ -7,6 +7,8 @@ type Props = {
   description: string;
   imageUrl?: string | StaticImport;
   buttons?: React.ReactNode;
+  showAlert?: boolean;
+  alertMessage?: string;
 };
 
 const ToolCard: React.FC<Props> = ({
@@ -14,6 +16,8 @@ const ToolCard: React.FC<Props> = ({
   description,
   imageUrl,
   buttons,
+  showAlert = false,
+  alertMessage,
   ...props
 }) => {
   return (
@@ -24,6 +28,9 @@ const ToolCard: React.FC<Props> = ({
       </div>
       <span className="text-base leading-normal">{description}</span>
       <div className="flex gap-2 pt-5 justify-center">{buttons}</div>
+      <div className="text-base leading-normal pt-2" hidden={!showAlert}>
+        {alertMessage}
+      </div>
     </div>
   );
 };

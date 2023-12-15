@@ -34,6 +34,7 @@ export default function Home() {
     Edge: edgeIcon,
   };
   const browserIcon = browsers[userAgent] ?? "Chrome";
+  const showAlert = ["Chrome", "Opera", "Edge"];
 
   const extensionsUrl: any = {
     ferramentasJudiciais: {
@@ -123,6 +124,8 @@ export default function Home() {
                     caption={`Baixar no ${userAgent}`}
                   />,
                 ]}
+                showAlert={showAlert.includes(userAgent)}
+                alertMessage="AVISO: Não sendo possível acessar a página para instalação da extensão, faça logout da sua conta institucional no Gmail e tente novamente."
               />
               <ToolCard
                 title="Extensão: Busca de CNPJ"
@@ -137,6 +140,8 @@ export default function Home() {
                     caption={`Baixar no ${userAgent}`}
                   />,
                 ]}
+                showAlert={showAlert.includes(userAgent)}
+                alertMessage="AVISO: Não sendo possível acessar a página para instalação da extensão, faça logout da sua conta institucional no Gmail e tente novamente."
               />
             </div>
           </h4>
