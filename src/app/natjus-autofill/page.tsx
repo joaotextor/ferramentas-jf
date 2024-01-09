@@ -2,6 +2,7 @@
 import BGParticles from "../../components/BGParticles";
 import Image from "next/image";
 import Head from "next/head";
+import GoBackNavigation from "@/components/GoBackNavigation";
 
 const heroImage = require("../../images/natjus-icon.png");
 const firefoxPermissions = require("../../images/firefox-permissions.jpg");
@@ -29,6 +30,7 @@ export default function NatjusAutoFill() {
             Como instalar e editar os dados padrões
           </h2>
           <div className="w-full pt-12">
+            <GoBackNavigation />
             <h3>1. Instalação</h3>
             <p>Instale normalmente pelo link de acesso na página inicial.</p>
           </div>
@@ -101,6 +103,7 @@ export default function NatjusAutoFill() {
                 <Image src={editarDados} alt="Firefox" width={300} />
               </div>
             </div>
+            <GoBackNavigation />
           </div>
         </div>
       </main>
