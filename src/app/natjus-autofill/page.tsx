@@ -51,8 +51,8 @@ export default function NatjusAutoFill() {
           <div className="w-full pt-4">
             <h3>3. Conceda permissão à extensão</h3>
             <p>
-              Clique no ícone da extensão e então selecione a opção para
-              permitir o uso no www.cnj.jus.br.
+              Estando na página do NatJus, clique no ícone da extensão e então
+              selecione a opção para permitir o uso no www.cnj.jus.br.
             </p>
             <div className="flex gap-4 mb-4">
               <div className="mt-8 text-center">

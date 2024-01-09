@@ -160,7 +160,7 @@ export default function Home() {
               />
               <ToolCard
                 title="Extensão: Auto-preenchimento NatJus"
-                description="Permite o preenchimento automáticos de dados padrões no formulário de requisição de Notas Técnicas do NatJus."
+                description="Permite o preenchimento, de forma automática de acordo com valores pré-definidos, dos seguintes campos do formulário de requisição de notas técnicas do NatJus: requerido, prazo, e-mail para resposta, Vara e motivo&sdas"
                 imageUrl={ssNatJus}
                 buttons={[
                   <SingleButton
