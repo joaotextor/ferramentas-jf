@@ -39,7 +39,7 @@ export default function NatjusAutoFill() {
             <p>
               Acesse o{" "}
               <a
-                className="text-blue-200"
+                className="text-secondary-light"
                 href="https://www.cnj.jus.br/e-natjus"
               >
                 site
