@@ -41,6 +41,7 @@ export default function NatjusAutoFill() {
               <a
                 className="text-secondary-light"
                 href="https://www.cnj.jus.br/e-natjus"
+                target="_blank"
               >
                 site
               </a>{" "}
