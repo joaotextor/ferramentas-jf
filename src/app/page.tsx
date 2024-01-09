@@ -176,6 +176,7 @@ export default function Home() {
                     svgFilterCode={svgFilter}
                     href="/natjus-autofill"
                     caption="Como Usar"
+                    target="_self"
                   />,
                 ]}
                 showAlert={showAlert.includes(userAgent)}

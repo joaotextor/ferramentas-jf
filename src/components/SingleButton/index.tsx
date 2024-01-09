@@ -7,6 +7,7 @@ type Props = {
   imgSrc: string;
   caption: string;
   svgFilterCode?: string;
+  target?: string;
 };
 
 const SingleButton: React.FC<Props> = ({
@@ -14,10 +15,11 @@ const SingleButton: React.FC<Props> = ({
   imgSrc,
   caption,
   svgFilterCode,
+  target,
   ...props
 }): JSX.Element => {
   return (
-    <Link href={href} target="_blank">
+    <Link href={href} target={target ?? "_blank"}>
       <div
         className={`flex items-center gap-1 w-fit rounded-md px-2 py-1 ${styles.buttonCss}`}
       >
