@@ -180,7 +180,7 @@ export default function Home() {
                   />,
                 ]}
                 showAlert={showAlert.includes(userAgent)}
-                alertMessage="AVISO: Não sendo possível acessar a página para instalar a extensão, faça logout da sua conta institucional no Gmail e tente novamente."
+                alertMessage="AVISOS: Temporariamente não funcional em razão de alterações na página do Nat-Jus. Não sendo possível acessar a página para instalar a extensão, faça logout da sua conta institucional no Gmail e tente novamente."
               />
             </div>
           </h4>
