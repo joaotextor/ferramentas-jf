@@ -8,6 +8,7 @@ type Props = {
   imageUrl?: string | StaticImport;
   imageWidth?: number;
   imageHeight?: number;
+  className?: string;
   buttons?: React.ReactNode;
   showAlert?: boolean;
   alertMessage?: string;
@@ -20,6 +21,7 @@ const ToolCard: React.FC<Props> = ({
   imageWidth,
   imageHeight,
   buttons,
+  className,
   showAlert = false,
   alertMessage,
   ...props
@@ -29,6 +31,7 @@ const ToolCard: React.FC<Props> = ({
       <h1 className="mb-4">{title}</h1>
       <div className="mb-3 flex max-md:flex-col max-md:items-center">
         <Image
+          className={`${className}`}
           src={imageUrl!}
           alt={title}
           height={imageHeight}

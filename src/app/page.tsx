@@ -112,6 +112,7 @@ export default function Home() {
                 description="O Provimento/TRF4 nº 62 informa, em seu Anexo VI, a lista de municípios atendidos pela JF da 4º Região, se há cumprimento de mandados e qual Subseção ou UAA é responsável pelo cumprimento. Diante da imensa quantidade de dados na tabela, perde-se tempo para identificar se em determinado município há ou não cumprimento de mandados. Esta ferramenta visa entregar essa informação de forma simplicada, bastando ao usuário digitar o nome da cidade desejada (No momento apenas os municípios do Rio Grande do Sul estão disponíveis)."
                 imageUrl={ssMandados}
                 imageHeight={150}
+                className="h-full"
                 buttons={[
                   <SingleButton
                     key="1"
