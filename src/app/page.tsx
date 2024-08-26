@@ -94,7 +94,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-4 justify-center max-md:mt-4">
               <ToolCard
                 title="Calculadora de dias úteis"
-                description="Apesar de o sistema e-Proc calcular automaticamente os dias úteis quando definimos um prazo de intimação, existem hipóteses em que necessitamos que o prazo se inicie somente a partir de determinada data (ex.: o prazo para entrega do laudo a partir da data da perícia). Esta ferramenta permite obter a data final por meio da seleção de uma data futura e a indicação do número de dias úteis a serem contados a partir dessa data. A ferramenta utiliza todos os feriados de 2023 até o final das férias advocatícias (20/01) de 2024, e considera individualmente os feriados municipais no Rio Grande do Sul (em breve também Santa Catarina e Paraná)."
+                description="Apesar de o sistema e-Proc calcular automaticamente os dias úteis quando definimos um prazo de intimação, existem hipóteses em que necessitamos que o prazo se inicie somente a partir de determinada data (ex.: o prazo para entrega do laudo a partir da data da perícia). Esta ferramenta permite obter a data final por meio da seleção de uma data futura e a indicação do número de dias úteis a serem contados a partir dessa data. A ferramenta utiliza todos os feriados nacionais, estaduais e dos municípios das Subseções que compõem a 4ª Região."
                 imageUrl={ssDiasUteis}
                 imageWidth={250}
                 buttons={[
@@ -109,7 +109,7 @@ export default function Home() {
               />
               <ToolCard
                 title="Cumprimento de Mandados"
-                description="O Provimento/TRF4 nº informa, em seu Anexo VI, a lista de municípios atendidos pela JF da 4º Região, se há cumprimento de mandados e qual Subseção ou UAA é responsável pelo cumprimento. Diante da imensa quantidade de dados na tabela, perde-se tempo para identificar se em determinado município há ou não cumprimento de mandados. Esta ferramenta visa entregar essa informação de forma simplicada, bastando ao usuário digitar o nome da cidade desejada (No momento apenas os municípios do Rio Grande do Sul estão disponíveis)."
+                description="O Provimento/TRF4 nº 62 informa, em seu Anexo VI, a lista de municípios atendidos pela JF da 4º Região, se há cumprimento de mandados e qual Subseção ou UAA é responsável pelo cumprimento. Diante da imensa quantidade de dados na tabela, perde-se tempo para identificar se em determinado município há ou não cumprimento de mandados. Esta ferramenta visa entregar essa informação de forma simplicada, bastando ao usuário digitar o nome da cidade desejada (No momento apenas os municípios do Rio Grande do Sul estão disponíveis)."
                 imageUrl={ssMandados}
                 imageWidth={600}
                 buttons={[
@@ -124,7 +124,7 @@ export default function Home() {
               />
               <ToolCard
                 title="Extensão: Ferramentas Judiciais"
-                description="Adiciona um novo botão ao e-proc, com atalhos para sistemas internos da Justiça Federal, tais como a planilha de saldo de contas de ações de medicamentos,  ferramenta de busca de cidades para Cumprimento de Mandados, SISBAJUD, etc."
+                description="Adiciona um novo botão ao e-proc no navegador do usuário, com atalhos para sistemas internos da Justiça Federal e sistemas de controle específicos da 1ª Vara Federal de Erechim/RS, tais como a planilha de saldo de contas de ações de medicamentos,  ferramenta de busca de cidades para Cumprimento de Mandados, SISBAJUD, etc."
                 imageUrl={ssFerramentas}
                 imageWidth={500}
                 buttons={[
@@ -180,7 +180,7 @@ export default function Home() {
                   />,
                 ]}
                 showAlert={showAlert.includes(userAgent)}
-                alertMessage="AVISO: Não sendo possível acessar a página para instalar a extensão, faça logout da sua conta institucional no Gmail e tente novamente."
+                alertMessage="AVISOS: Temporariamente não funcional em razão de alterações na página do Nat-Jus. Não sendo possível acessar a página para instalar a extensão, faça logout da sua conta institucional no Gmail e tente novamente."
               />
             </div>
           </h4>
