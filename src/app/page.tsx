@@ -78,7 +78,7 @@ export default function Home() {
         <meta property="og:description" content="Faça mais em menos tempo!" />
       </Head>
       <BGParticles />
-      <main className="flex min-h-screen flex-col items-center 2xl:px-72 pt-12 text-justify">
+      <main className="w-4/5 m-auto flex min-h-screen flex-col items-center 2xl:px-72 pt-12 text-justify">
         <div className="flex flex-col items-center justify-center gap-4">
           <Image src={heroImage} alt="Hero" width={250} className="justify-" />
           <h1
