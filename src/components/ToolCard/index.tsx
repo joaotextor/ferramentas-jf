@@ -40,7 +40,10 @@ const ToolCard: React.FC<Props> = ({
         <div className="text-base leading-normal text-justify px-4 max-md:text-center max-md:flex max-md:flex-col max-md:items-center">
           <span>{description}</span>
           <div className="flex gap-2 pt-5">{buttons}</div>
-          <div className="text-base leading-normal pt-2" hidden={!showAlert}>
+          <div
+            className="text-primary-light text-base leading-normal pt-2"
+            hidden={!showAlert}
+          >
             {alertMessage}
           </div>
         </div>

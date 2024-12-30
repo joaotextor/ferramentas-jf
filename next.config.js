@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
-  basePath: "/ferramentas-jf",
+  output: "standalone",
+  // output: "export",
+  basePath: "",
+  // basePath: "/ferramentas-jf",
   images: {
     unoptimized: true,
   },
