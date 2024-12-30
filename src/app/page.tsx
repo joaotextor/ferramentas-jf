@@ -15,12 +15,15 @@ const firefoxIcon = require("../../src/images/firefox_icon.svg");
 const edgeIcon = require("../../src/images/edge_icon.svg");
 const operaIcon = require("../../src/images/opera_icon.svg");
 const questionIcon = require("../../src/images/question_icon.svg");
+const downloadIcon = require("../../src/images/download_icon.svg");
 
 const ssDiasUteis = require("../images/screenshots/diasuteis.png");
 const ssMandados = require("../images/screenshots/cumprimento_mandados.png");
 const ssFerramentas = require("../images/screenshots/FerramentasJudiciais.jpeg");
 const ssBuscaCnpj = require("../images/screenshots/BuscaCNPJ.jpeg");
 const ssNatJus = require("../images/editar-dados.jpg");
+const ssExtratorTcCarencia = require("../images/extratorTcCarencia.jpg");
+const ssImportarTcCarencia = require("../images/importarTcCarencia.jpg");
 
 export default function Home() {
   const [userAgent, setUserAgent] = useState<string>("Chrome");
@@ -66,6 +69,15 @@ export default function Home() {
         "https://chromewebstore.google.com/detail/auto-preenchimento-nat-ju/ojpdgoeojoilbdclhikeiblimcoghopf?hl=pt-BR",
       Edge: "https://chromewebstore.google.com/detail/auto-preenchimento-nat-ju/ojpdgoeojoilbdclhikeiblimcoghopf?hl=pt-BR",
     },
+    ptiTcCarencia: {
+      Firefox:
+        "https://addons.mozilla.org/pt-BR/firefox/addon/pti-tc-e-car%C3%AAncia/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search",
+      Chrome:
+        "https://chromewebstore.google.com/detail/pti-tc-carencia/bfkfplicpbcabmocloclajcinmkgjfhp?hl=pt-BR&authuser=0",
+      Opera:
+        "https://chromewebstore.google.com/detail/pti-tc-carencia/bfkfplicpbcabmocloclajcinmkgjfhp?hl=pt-BR&authuser=0",
+      Edge: "https://chromewebstore.google.com/detail/pti-tc-carencia/bfkfplicpbcabmocloclajcinmkgjfhp?hl=pt-BR&authuser=0",
+    },
   };
 
   const svgFilter =
@@ -82,17 +94,49 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center gap-4">
           <Image src={heroImage} alt="Hero" width={250} className="justify-" />
           <h1
-            className="text-center pb-8 max-md:text-[24px]"
+            className="text-center max-md:text-[24px]"
             aria-label="título da página"
             tabIndex={2}
           >
             Bem vindo, colegas da Justiça Federal!
           </h1>
-          <h4 className="text-center pb-2 px-8">
+          <h2 className="text-center pb-2 px-8 text-[20px]">
             Aqui disponibilizo algumas ferramentas para agilizar algumas tarefas
             no dia-a-dia do nosso trabalho!
-          </h4>
+          </h2>
+          <ul className="text-secondary-light text-xl flex flex-wrap gap-4 justify-center">
+            <li>
+              <SingleButton
+                href="#webapps"
+                key="webapps"
+                className="!bg-secondary-light"
+                caption="Aplicativos Web"
+                target="_self"
+              />
+            </li>
+            <li>
+              <SingleButton
+                href="#softwares"
+                key="softwares"
+                className="!bg-secondary-light"
+                caption="Programas"
+                target="_self"
+              />
+            </li>
+            <li>
+              <SingleButton
+                href="#extensions"
+                key="extensions"
+                className="!bg-secondary-light"
+                caption="Extensões"
+                target="_self"
+              />
+            </li>
+          </ul>
           <div className="flex flex-wrap gap-4 justify-center max-md:mt-4">
+            <h3 id="webapps" className="text-3xl mt-8">
+              Aplicativos Web
+            </h3>
             <ToolCard
               title="Calculadora de dias úteis"
               description="Apesar de o sistema e-Proc calcular automaticamente os dias úteis quando definimos um prazo de intimação, existem hipóteses em que necessitamos que o prazo se inicie somente a partir de determinada data (ex.: o prazo para entrega do laudo a partir da data da perícia). Esta ferramenta permite obter a data final por meio da seleção de uma data futura e a indicação do número de dias úteis a serem contados a partir dessa data. A ferramenta utiliza todos os feriados nacionais, estaduais e dos municípios das Subseções que compõem a 4ª Região."
@@ -124,20 +168,46 @@ export default function Home() {
                 />,
               ]}
             />
+            <h3 id="softwares" className="text-3xl mt-8">
+              Programas
+            </h3>
             <ToolCard
-              title="Extensão: Ferramentas Judiciais"
-              description="Adiciona um novo botão ao e-proc no navegador do usuário, com atalhos para sistemas internos da Justiça Federal e sistemas de controle específicos da 1ª Vara Federal de Erechim/RS, tais como a planilha de saldo de contas de ações de medicamentos,  ferramenta de busca de cidades para Cumprimento de Mandados, SISBAJUD, etc."
-              imageUrl={ssFerramentas}
-              imageWidth={500}
+              title="Extrator de Tempo de Contribuição e Carência"
+              description={`Esse programa tem como objeto extrair, do documento de "Análise do Direito" emitido pelo INSS, o tempo de contribuição e a carência em todas as datas relevantes (Alterações legislativas e na DER). Essa informação organizada pode ser utilizada com a Extensão PTI-TC-Carência para importar, de forma automática e de uma só vez, o tempo de contribuição e carência dentro da Planilha do Tramitação Inteligente. Para saber mais sobre essa funcionalidade, veja a Extensão PTI-TC-Carência.`}
+              imageUrl={ssExtratorTcCarencia}
+              imageHeight={550}
+              buttons={[
+                <SingleButton
+                  key="1"
+                  imgSrc={downloadIcon}
+                  href="https://github.com/joaotextor/extrator-tc-carencia/releases/download/tc-carencia1.1.1/Extrator.de.TC.e.Carencia.Setup.1.1.1.exe"
+                  caption="Baixar"
+                />,
+              ]}
+            />
+            <h3 id="extensions" className="text-3xl mt-8">
+              Extensões
+            </h3>
+            <ToolCard
+              title="Extensão: Importar Tempo de Contribuição e Carência"
+              description="Uma extensão de navegador que funciona no site Tramitação Inteligente, adicionando a possibilidade de importar, automaticamente de uma só vez, o Tempo de Contribuição e Carências já reconhecidas pelo INSS na Análise de Direito. A importação se dá colando o resultado fornecido pelo programa Extrator de TC e Carência (disponível acima)."
+              imageUrl={ssImportarTcCarencia}
+              imageHeight={300}
               buttons={[
                 <SingleButton
                   key="1"
                   imgSrc={browserIcon}
                   svgFilterCode={svgFilter}
-                  href={
-                    extensionsUrl.ferramentasJudiciais[userAgent ?? "Chrome"]
-                  }
+                  href={extensionsUrl.ptiTcCarencia[userAgent ?? "Chrome"]}
                   caption={`Baixar no ${userAgent}`}
+                />,
+                <SingleButton
+                  key="1"
+                  imgSrc={questionIcon}
+                  svgFilterCode={svgFilter}
+                  href="https://github.com/joaotextor/pti-tc-carencia#uso"
+                  caption="Como Usar"
+                  target="_blank"
                 />,
               ]}
               showAlert={showAlert.includes(userAgent)}
@@ -179,6 +249,25 @@ export default function Home() {
                   href="/natjus-autofill"
                   caption="Como Usar"
                   target="_self"
+                />,
+              ]}
+              showAlert={showAlert.includes(userAgent)}
+              alertMessage="AVISO: Não sendo possível acessar a página para instalar a extensão, faça logout da sua conta institucional no Gmail e tente novamente."
+            />
+            <ToolCard
+              title="Extensão: Ferramentas Judiciais"
+              description="Adiciona um novo botão ao e-proc no navegador do usuário, com atalhos para sistemas internos da Justiça Federal e sistemas de controle específicos da 1ª Vara Federal de Erechim/RS, tais como a planilha de saldo de contas de ações de medicamentos,  ferramenta de busca de cidades para Cumprimento de Mandados, SISBAJUD, etc."
+              imageUrl={ssFerramentas}
+              imageWidth={500}
+              buttons={[
+                <SingleButton
+                  key="1"
+                  imgSrc={browserIcon}
+                  svgFilterCode={svgFilter}
+                  href={
+                    extensionsUrl.ferramentasJudiciais[userAgent ?? "Chrome"]
+                  }
+                  caption={`Baixar no ${userAgent}`}
                 />,
               ]}
               showAlert={showAlert.includes(userAgent)}

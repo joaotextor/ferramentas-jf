@@ -28,7 +28,7 @@ const ToolCard: React.FC<Props> = ({
 }) => {
   return (
     <div className="mt-1 flex flex-col items-start h-fit max-md:w-full rounded-3xl border-2 p-3 leading-none bg-gradient-to-b from-sky-950 to-primary-dark shadow-lg shadow-slate-500">
-      <h1 className="mb-4">{title}</h1>
+      <h1 className="mb-4 max-md:text-center">{title}</h1>
       <div className="mb-3 flex max-md:flex-col max-md:items-center">
         <Image
           className={`${className}`}
