@@ -36,6 +36,7 @@ const ToolCard: React.FC<Props> = ({
           alt={title}
           height={imageHeight}
           width={imageWidth}
+          objectFit="cover"
         />
         <div className="text-base leading-normal text-justify px-4 max-md:text-center max-md:flex max-md:flex-col max-md:items-center">
           <span>{description}</span>

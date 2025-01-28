@@ -21,9 +21,10 @@ const ssDiasUteis = require("../images/screenshots/diasuteis.png");
 const ssMandados = require("../images/screenshots/cumprimento_mandados.png");
 const ssFerramentas = require("../images/screenshots/FerramentasJudiciais.jpeg");
 const ssBuscaCnpj = require("../images/screenshots/BuscaCNPJ.jpeg");
-const ssNatJus = require("../images/editar-dados.jpg");
-const ssExtratorTcCarencia = require("../images/extratorTcCarencia.jpg");
-const ssImportarTcCarencia = require("../images/importarTcCarencia.jpg");
+const ssNatJus = require("../images/screenshots/editar-dados.jpg");
+const ssExtratorTcCarencia = require("../images/screenshots/extratorTcCarencia.jpg");
+const ssImportarTcCarencia = require("../images/screenshots/importarTcCarencia.jpg");
+const ssPrescricaoQuinquenal = require("../images/screenshots/prescricaoQuinquenal.jpg");
 
 export default function Home() {
   const [userAgent, setUserAgent] = useState<string>("Chrome");
@@ -78,6 +79,15 @@ export default function Home() {
         "https://chromewebstore.google.com/detail/pti-tc-carencia/bfkfplicpbcabmocloclajcinmkgjfhp?hl=pt-BR&authuser=0",
       Edge: "https://chromewebstore.google.com/detail/pti-tc-carencia/bfkfplicpbcabmocloclajcinmkgjfhp?hl=pt-BR&authuser=0",
     },
+    prescricaoQuinquenal: {
+      Firefox:
+        "https://joaotextor.com/ferramentas-jf/extensions/prescricaoquinquenal-1.0.1.xpi",
+      Chrome:
+        "https://chromewebstore.google.com/detail/calculadora-de-prescri%C3%A7%C3%A3o/bpeohgcmbdjilbdamkggejffenhpompp",
+      Opera:
+        "https://chromewebstore.google.com/detail/calculadora-de-prescri%C3%A7%C3%A3o/bpeohgcmbdjilbdamkggejffenhpompp",
+      Edge: "https://chromewebstore.google.com/detail/calculadora-de-prescri%C3%A7%C3%A3o/bpeohgcmbdjilbdamkggejffenhpompp",
+    },
   };
 
   const svgFilter =
@@ -90,7 +100,7 @@ export default function Home() {
         <meta property="og:description" content="Faça mais em menos tempo!" />
       </Head>
       <BGParticles />
-      <main className="w-4/5 m-auto flex min-h-screen flex-col items-center 2xl:px-72 pt-12 text-justify">
+      <main className="w-5/6 m-auto flex min-h-screen flex-col items-center 2xl:px-64 pt-12 text-justify">
         <div className="flex flex-col items-center justify-center gap-4">
           <Image src={heroImage} alt="Hero" width={250} className="justify-" />
           <h1
@@ -175,7 +185,8 @@ export default function Home() {
               title="Extrator de Tempo de Contribuição e Carência"
               description={`Esse programa tem como objeto extrair, do documento de "Análise do Direito" emitido pelo INSS, o tempo de contribuição e a carência em todas as datas relevantes (Alterações legislativas e na DER). Essa informação organizada pode ser utilizada com a Extensão PTI-TC-Carência para importar, de forma automática e de uma só vez, o tempo de contribuição e carência dentro da Planilha do Tramitação Inteligente. Para saber mais sobre essa funcionalidade, veja a Extensão PTI-TC-Carência.`}
               imageUrl={ssExtratorTcCarencia}
-              imageHeight={550}
+              imageWidth={500}
+              className="h-full"
               buttons={[
                 <SingleButton
                   key="1"
@@ -192,7 +203,8 @@ export default function Home() {
               title="Extensão: Importar Tempo de Contribuição e Carência"
               description="Uma extensão de navegador que funciona no site Tramitação Inteligente, adicionando a possibilidade de importar, automaticamente de uma só vez, o Tempo de Contribuição e Carências já reconhecidas pelo INSS na Análise de Direito. A importação se dá colando o resultado fornecido pelo programa Extrator de TC e Carência (disponível acima)."
               imageUrl={ssImportarTcCarencia}
-              imageHeight={300}
+              imageWidth={350}
+              className="h-full"
               buttons={[
                 <SingleButton
                   key="1"
@@ -208,6 +220,26 @@ export default function Home() {
                   href="https://github.com/joaotextor/pti-tc-carencia#uso"
                   caption="Como Usar"
                   target="_blank"
+                />,
+              ]}
+              showAlert={showAlert.includes(userAgent)}
+              alertMessage="AVISO: Não sendo possível acessar a página para instalar a extensão, faça logout da sua conta institucional no Gmail e tente novamente."
+            />
+            <ToolCard
+              title="Extensão: Cálculo de Prescrição Quinquenal para e-Proc"
+              description="Adiciona um novo botão ao editor de documentos do e-Proc para calcular a prescrição quinquenal para revisão do processo administrativo previdenciário que deferiu o benefício, levando-se em consideração a suspensão do prazo prescricional em razão do tempo de tramitação do processo revisional na via administrativa."
+              imageUrl={ssPrescricaoQuinquenal}
+              imageWidth={400}
+              className="h-full"
+              buttons={[
+                <SingleButton
+                  key="1"
+                  imgSrc={browserIcon}
+                  svgFilterCode={svgFilter}
+                  href={
+                    extensionsUrl.prescricaoQuinquenal[userAgent ?? "Chrome"]
+                  }
+                  caption={`Baixar no ${userAgent}`}
                 />,
               ]}
               showAlert={showAlert.includes(userAgent)}
@@ -258,7 +290,8 @@ export default function Home() {
               title="Extensão: Ferramentas Judiciais"
               description="Adiciona um novo botão ao e-proc no navegador do usuário, com atalhos para sistemas internos da Justiça Federal e sistemas de controle específicos da 1ª Vara Federal de Erechim/RS, tais como a planilha de saldo de contas de ações de medicamentos,  ferramenta de busca de cidades para Cumprimento de Mandados, SISBAJUD, etc."
               imageUrl={ssFerramentas}
-              imageWidth={500}
+              imageWidth={400}
+              className="h-full"
               buttons={[
                 <SingleButton
                   key="1"
