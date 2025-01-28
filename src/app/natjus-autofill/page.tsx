@@ -9,7 +9,7 @@ const firefoxPermissions = require("../../images/firefox-permissions.jpg");
 const chromePermissions = require("../../images/chrome-permissions.jpg");
 const extensoes = require("../../images/extensoes.jpg");
 const autoPreencher = require("../../images/auto-preencher.jpg");
-const editarDados = require("../../images/editar-dados.jpg");
+const editarDados = require("../../images/screenshots/editar-dados.jpg");
 
 export default function NatjusAutoFill() {
   return (
