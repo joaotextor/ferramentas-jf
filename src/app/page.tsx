@@ -81,7 +81,7 @@ export default function Home() {
     },
     prescricaoQuinquenal: {
       Firefox:
-        "https://joaotextor.com/ferramentas-jf/extensions/prescricaoquinquenal-1.0.1.xpi",
+        "https://joaotextor.com/ferramentas-jf/extensions/prescricaoquinquenal.xpi",
       Chrome:
         "https://chromewebstore.google.com/detail/calculadora-de-prescri%C3%A7%C3%A3o/bpeohgcmbdjilbdamkggejffenhpompp",
       Opera:
