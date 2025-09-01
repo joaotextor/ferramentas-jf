@@ -88,6 +88,15 @@ export default function Home() {
         "https://chromewebstore.google.com/detail/calculadora-de-prescri%C3%A7%C3%A3o/bpeohgcmbdjilbdamkggejffenhpompp",
       Edge: "https://chromewebstore.google.com/detail/calculadora-de-prescri%C3%A7%C3%A3o/bpeohgcmbdjilbdamkggejffenhpompp",
     },
+    autoSavePainelPrev: {
+      Firefox:
+        "https://joaotextor.com/ferramentas-jf/extensions/autosave-painel-prev.xpi",
+      Chrome:
+        "https://chromewebstore.google.com/detail/auto-salvar-painel-previd/fndpkkihfecadifhgnbbaiecplikonkd?authuser=0&hl=pt-BR",
+      Opera:
+        "https://chromewebstore.google.com/detail/auto-salvar-painel-previd/fndpkkihfecadifhgnbbaiecplikonkd?authuser=0&hl=pt-BR",
+      Edge: "https://chromewebstore.google.com/detail/auto-salvar-painel-previd/fndpkkihfecadifhgnbbaiecplikonkd?authuser=0&hl=pt-BR",
+    },
   };
 
   const svgFilter =
@@ -300,6 +309,25 @@ export default function Home() {
                   href={
                     extensionsUrl.ferramentasJudiciais[userAgent ?? "Chrome"]
                   }
+                  caption={`Baixar no ${userAgent}`}
+                />,
+              ]}
+              showAlert={showAlert.includes(userAgent)}
+              alertMessage="AVISO: Não sendo possível acessar a página para instalar a extensão, faça logout da sua conta institucional no Gmail e tente novamente."
+            />
+            <ToolCard
+              title="Extensão: Salvamento automático - Painel Previdenciário"
+              description="Salva automaticamente o painel previdenciário no e-Proc ao salvar a fundamentação, os dados do período ou alterar o status da instrução ou da conclusão."
+              imageUrl="https://www.trf4.jus.br/trf4/upload/editor/2025/ppi71_ppi71_portal--1-.jpg"
+              imageHeight={400}
+              imageWidth={400}
+              className="h-full"
+              buttons={[
+                <SingleButton
+                  key="1"
+                  imgSrc={browserIcon}
+                  svgFilterCode={svgFilter}
+                  href={extensionsUrl.autoSavePainelPrev[userAgent ?? "Chrome"]}
                   caption={`Baixar no ${userAgent}`}
                 />,
               ]}
