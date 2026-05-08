@@ -35,6 +35,9 @@ const BGParticles = () => {
         },
       },
     },
+    fullScreen: {
+      enable: false,
+    },
     particles: {
       color: {
         value: "#ffffff",
@@ -81,8 +84,12 @@ const BGParticles = () => {
   };
 
   return (
-    <div>
-      <Particles id="tsparticles" init={particlesInit} options={options} />
+    <div style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", zIndex: -1 }}>
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        options={options}
+      />
     </div>
   );
 };
