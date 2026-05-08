@@ -23,6 +23,7 @@ const ssFerramentas = require("../images/screenshots/FerramentasJudiciais.jpeg")
 const ssBuscaCnpj = require("../images/screenshots/BuscaCNPJ.jpeg");
 const ssNatJus = require("../images/screenshots/editar-dados.jpg");
 const ssExtratorTcCarencia = require("../images/screenshots/extratorTcCarencia.jpg");
+const ssExtratorRdctc = require("../images/screenshots/extratorRdctc.png");
 const ssImportarTcCarencia = require("../images/screenshots/importarTcCarencia.jpg");
 const ssPrescricaoQuinquenal = require("../images/screenshots/prescricaoQuinquenal.jpg");
 
@@ -191,8 +192,23 @@ export default function Home() {
               Programas
             </h3>
             <ToolCard
-              title="Extrator de Tempo de Contribuição e Carência"
-              description={`Esse programa tem como objeto extrair, do documento de "Análise do Direito" emitido pelo INSS, o tempo de contribuição e a carência em todas as datas relevantes (Alterações legislativas e na DER). Essa informação organizada pode ser utilizada com a Extensão PTI-TC-Carência para importar, de forma automática e de uma só vez, o tempo de contribuição e carência dentro da Planilha do Tramitação Inteligente. Para saber mais sobre essa funcionalidade, veja a Extensão PTI-TC-Carência.`}
+              title="Extrator de Períodos do RDCTC (novo)"
+              description={`Esse aplicativo web extrai do RDCTC (Resumo de Documentos para Cálculo de Tempo de Contribuição) emitido pelo INSS, os períodos laborados e reconehcidos pelo INSS, carência e origem do vínculo. Essa informação organizada pode então ser importada na Fábrica de Cálculos do TRF-3.`}
+              imageUrl={ssExtratorRdctc}
+              imageWidth={500}
+              className="h-full"
+              buttons={[
+                <SingleButton
+                  key="1"
+                  imgSrc={webIcon}
+                  href="https://www.joaotextor.com/extrator-rdctc"
+                  caption="Acessar"
+                />,
+              ]}
+            />
+            <ToolCard
+              title="Extrator de Tempo de Contribuição e Carência (Obsoleto)"
+              description={`Esse programa tem como objeto extrair, do documento de "Análise do Direito" emitido pelo INSS, o tempo de contribuição e a carência em todas as datas relevantes (Alterações legislativas e na DER). Essa informação organizada pode ser utilizada com a Extensão PTI-TC-Carência para importar, de forma automática e de uma só vez, o tempo de contribuição e carência dentro da Planilha do Tramitação Inteligente. Para saber mais sobre essa funcionalidade, veja a Extensão PTI-TC-Carência. O programa ainda pode ser utilizado, mas agora é recomendado o uso da Fábrica de Cálculos do TRF-3, podendo ser utilizado o Extrator de Períodos do RDCTC (novo)`}
               imageUrl={ssExtratorTcCarencia}
               imageWidth={500}
               className="h-full"
