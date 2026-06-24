@@ -3,48 +3,72 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: #fffad7;
-  --background-start-rgb: #091527;
-  --background-end-rgb: #0f2038;
-  --default-font: "Nunito", sans-serif;
+  /* frontend-jf palette */
+  --bg:            #071427;
+  --surface:       #0E1F38;
+  --card:          #142B4D;
+  --border:        #1F3A60;
+  --border-soft:   #1A2E4F;
+  --ink:           #E8EFF8;
+  --text:          #CBD5E1;
+  --text-muted:    #94A3B8;
+  --primary:       #60A5FA;
+  --primary-hover: #93C5FD;
+  --secondary:     #3B82F6;
+  --accent:        #93C5FD;
+  --code-bg:       #050D1F;
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  scroll-behavior: smooth;
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, var(--background-end-rgb))
-    var(--background-start-rgb);
-  height: 100%;
-  width: 100%;
+  color: var(--ink);
+  background: var(--bg);
+  min-height: 100%;
   font-size: 16px;
   margin: 0;
   padding: 0;
-  font-family: var(--default-font);
+  font-family: var(--font-inter), Inter, sans-serif;
   font-weight: 400;
 }
 
-h1,
-h2,
-h3,
-h4,
-span,
-p,
-a {
-  color: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  color: var(--foreground-rgb);
+/* Institutional background — layered radial gradients */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 10%, rgba(59,130,246,0.20), transparent 60%),
+    radial-gradient(ellipse 50% 60% at 85% 25%, rgba(96,165,250,0.14), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 50% 95%, rgba(30,58,138,0.28), transparent 60%),
+    linear-gradient(180deg, #050D1F 0%, #071427 50%, #050D1F 100%);
+  pointer-events: none;
 }
 
-h1 {
-  font-size: 32px;
+h1, h2, h3, h4 {
+  color: var(--ink);
+  font-family: var(--font-serif), "Source Serif 4", serif;
 }
-h2 {
-  font-size: 28px;
+
+h1 em, h2 em, h3 em, h4 em {
+  font-style: italic;
+  color: var(--accent);
 }
-h3 {
-  font-size: 24px;
+
+p, span, a {
+  color: var(--text);
 }
-h4 {
-  font-size: 20px;
+
+h1 { font-size: 32px; font-weight: 600; }
+h2 { font-size: 28px; font-weight: 600; }
+h3 { font-size: 24px; font-weight: 500; }
+h4 { font-size: 20px; font-weight: 500; }
+
+code, pre {
+  font-family: var(--font-mono), "JetBrains Mono", monospace;
 }

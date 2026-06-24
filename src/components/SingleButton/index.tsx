@@ -21,22 +21,22 @@ const SingleButton: React.FC<Props> = ({
   ...props
 }): JSX.Element => {
   return (
-    <Link href={href} target={target ?? "_blank"}>
-      <div
-        className={`flex items-center gap-1 w-fit rounded-md px-2 py-1 ${styles.buttonCss} ${className}`}
-      >
-        <div>
-          {imgSrc && (
-            <Image
-              height={25}
-              alt="download icon"
-              src={imgSrc}
-              style={{ filter: svgFilterCode }}
-            />
-          )}
-        </div>
-        <span className="text-primary-dark font-medium">{caption}</span>
-      </div>
+    <Link
+      href={href}
+      target={target ?? "_blank"}
+      className={`${styles.btn} ${className ?? ""}`}
+    >
+      <span className={styles.btnCaption}>{caption}</span>
+      {imgSrc && (
+        <Image
+          className={styles.btnIcon}
+          height={18}
+          width={18}
+          alt=""
+          src={imgSrc}
+          style={{ filter: svgFilterCode }}
+        />
+      )}
     </Link>
   );
 };

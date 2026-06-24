@@ -125,12 +125,11 @@ export default function Home() {
             Aqui disponibilizo algumas ferramentas para agilizar algumas tarefas
             no dia-a-dia do nosso trabalho!
           </h2>
-          <ul className="text-secondary-light text-xl flex flex-wrap gap-4 justify-center">
+          <ul className="flex flex-wrap gap-4 justify-center">
             <li>
               <SingleButton
                 href="#webapps"
                 key="webapps"
-                className="!bg-secondary-light"
                 caption="Aplicativos Web"
                 target="_self"
               />
@@ -139,7 +138,6 @@ export default function Home() {
               <SingleButton
                 href="#softwares"
                 key="softwares"
-                className="!bg-secondary-light"
                 caption="Programas"
                 target="_self"
               />
@@ -148,7 +146,6 @@ export default function Home() {
               <SingleButton
                 href="#extensions"
                 key="extensions"
-                className="!bg-secondary-light"
                 caption="Extensões"
                 target="_self"
               />
@@ -241,7 +238,7 @@ export default function Home() {
               Extensões
             </h3>
             <ToolCard
-              title="Extensão: Importar Tempo de Contribuição e Carência"
+              title="Extensão: Importar Tempo de Contribuição e Carência (Obsoleto)"
               description="Uma extensão de navegador que funciona no site Tramitação Inteligente, adicionando a possibilidade de importar, automaticamente de uma só vez, o Tempo de Contribuição e Carências já reconhecidas pelo INSS na Análise de Direito. A importação se dá colando o resultado fornecido pelo programa Extrator de TC e Carência (disponível acima)."
               imageUrl={ssImportarTcCarencia}
               imageWidth={350}

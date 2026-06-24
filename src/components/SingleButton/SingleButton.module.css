@@ -1,3 +1,46 @@
-.buttonCss {
-  background-color: #fffad7;
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  font: 500 0.9375rem/1 var(--font-inter), Inter, sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 200ms var(--ease),
+    color 200ms var(--ease),
+    border-color 200ms var(--ease),
+    box-shadow 200ms var(--ease),
+    transform 200ms var(--ease);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--primary);
+  color: var(--bg);
+  border-color: var(--primary-hover);
+  box-shadow:
+    0 0 0 1px rgba(147, 197, 253, 0.4),
+    0 0 20px -2px rgba(96, 165, 250, 0.55),
+    0 0 40px -6px rgba(59, 130, 246, 0.4);
+}
+
+.btnIcon {
+  width: 18px;
+  height: 18px;
+  transition: transform 200ms var(--ease);
+}
+
+.btn:hover .btnIcon,
+.btn:focus-visible .btnIcon {
+  transform: translateX(2px);
+}
+
+.btnCaption {
+  font-weight: 500;
+  white-space: nowrap;
 }
