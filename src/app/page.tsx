@@ -317,6 +317,7 @@ export default function Home() {
               showAlert={showAlert.includes(userAgent)}
               alertMessage="AVISO: Não sendo possível acessar a página para instalar a extensão, faça logout da sua conta institucional no Gmail e tente novamente."
             />
+            {false && (
             <ToolCard
               title="Extensão: Auto-preenchimento NatJus"
               description="Permite o preenchimento, de forma automática de acordo com valores pré-definidos, dos seguintes campos do formulário de requisição de notas técnicas do NatJus: requerido, prazo, e-mail para resposta, Vara e motivo."
@@ -341,6 +342,7 @@ export default function Home() {
               showAlert={showAlert.includes(userAgent)}
               alertMessage="AVISO: Não sendo possível acessar a página para instalar a extensão, faça logout da sua conta institucional no Gmail e tente novamente."
             />
+            )}
             <ToolCard
               title="Extensão: Ferramentas Judiciais"
               description="Adiciona um novo botão ao e-proc no navegador do usuário, com atalhos para sistemas internos da Justiça Federal e sistemas de controle específicos da 1ª Vara Federal de Erechim/RS, tais como a planilha de saldo de contas de ações de medicamentos,  ferramenta de busca de cidades para Cumprimento de Mandados, SISBAJUD, etc."
