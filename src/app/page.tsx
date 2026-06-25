@@ -27,6 +27,7 @@ const ssExtratorRdctc = require("../images/screenshots/extratorRdctc.png");
 const ssPrecedenti = require("../images/screenshots/precedenti.jpg");
 const ssImportarTcCarencia = require("../images/screenshots/importarTcCarencia.jpg");
 const ssPrescricaoQuinquenal = require("../images/screenshots/prescricaoQuinquenal.jpg");
+const ssPdfSplitter = require("../images/screenshots/pdf-splitter.jpg");
 
 export default function Home() {
   const [userAgent, setUserAgent] = useState<string>("Chrome");
@@ -202,7 +203,7 @@ export default function Home() {
             />
             <ToolCard
               title="Cumprimento de Mandados"
-              description="O Provimento/TRF4 nº 62 informa, em seu Anexo VI, a lista de municípios atendidos pela JF da 4º Região, se há cumprimento de mandados e qual Subseção ou UAA é responsável pelo cumprimento. Diante da imensa quantidade de dados na tabela, perde-se tempo para identificar se em determinado município há ou não cumprimento de mandados. Esta ferramenta visa entregar essa informação de forma simplicada, bastando ao usuário digitar o nome da cidade desejada (No momento apenas os municípios do Rio Grande do Sul estão disponíveis)."
+              description="Ferramenta que indica, pelo nome da cidade, se há cumprimento de mandados naquela localidade e qual Subseção/UAA é responsável (Anexo VI do Provimento/TRF4 nº 62). No momento, apenas municípios do Rio Grande do Sul."
               imageUrl={ssMandados}
               imageHeight={150}
               className="h-full"
@@ -212,6 +213,21 @@ export default function Home() {
                   imgSrc={webIcon}
                   svgFilterCode={svgFilter}
                   href="https://joaotextor.com/cumprimento-mandados/"
+                  caption="Acessar"
+                />,
+              ]}
+            />
+            <ToolCard
+              title="Dividir PDFs"
+              description="Divide um PDF em partes de tamanho máximo configurável."
+              imageUrl={ssPdfSplitter}
+              imageWidth={500}
+              className="h-full"
+              buttons={[
+                <SingleButton
+                  key="1"
+                  imgSrc={webIcon}
+                  href="https://joaotextor.com/dividir-pdf"
                   caption="Acessar"
                 />,
               ]}
