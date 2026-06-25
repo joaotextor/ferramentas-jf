@@ -111,6 +111,7 @@ export default function Home() {
         <meta name="og:image" content={heroImage} />
         <meta property="og:title" content="Ferramentas JF" />
         <meta property="og:description" content="Faça mais em menos tempo!" />
+        <meta name="robots" content="noindex" />
       </Head>
       <main className="w-5/6 m-auto flex min-h-screen flex-col items-center 2xl:px-64 pt-12 text-justify">
         <div className="flex flex-col items-center justify-center gap-4">
